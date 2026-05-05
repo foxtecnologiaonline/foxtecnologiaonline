@@ -3,21 +3,18 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative gradient-fox min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-fox-gray-light to-white opacity-20"></div>
-
+    <section className="relative bg-white min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container-fox px-6 py-20 md:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Soluções em
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+                <span className="text-fox-gray-dark">Soluções em</span>
                 <br />
-                <span className="text-gradient-fox block">tecnologIA</span>
+                <span className="text-fox-orange-dark block">tecnologIA</span>
               </h1>
-              <p className="text-xl text-white opacity-90 max-w-lg">
+              <p className="text-xl text-fox-gray-dark opacity-80 max-w-lg">
                 Inovação e tecnologia para transformar sua visão em realidade
               </p>
             </div>
@@ -39,7 +36,7 @@ export default function Hero() {
                 src="/logo.png"
                 alt="FOX tecnologIA"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-lg"
                 priority
               />
             </div>
