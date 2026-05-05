@@ -22,12 +22,12 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="FOX tecnologIA"
-            width={40}
-            height={40}
+            width={44}
+            height={44}
             className="rounded"
           />
-          <span className="text-lg font-bold text-fox-gray-dark hidden sm:inline">
-            FOX
+          <span className="text-lg font-bold hidden sm:inline">
+            <span className="text-fox-gray-dark">FOX </span><span className="text-fox-orange">tecnolog</span><span className="text-fox-orange-dark font-extrabold">IA</span>
           </span>
         </Link>
 
