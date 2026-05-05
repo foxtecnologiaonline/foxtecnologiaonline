@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-fox-orange: #FF7A00;
+  --color-fox-orange-dark: #FF6B00;
+  --color-fox-gray-light: #F5F5F5;
+  --color-fox-gray-dark: #2D3436;
+  --color-fox-accent: #E8E8E8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.gradient-fox {
+  background: linear-gradient(135deg, var(--color-fox-orange) 0%, rgba(255, 122, 0, 0.8) 100%);
+}
+
+.text-gradient-fox {
+  background: linear-gradient(135deg, var(--color-fox-orange) 0%, var(--color-fox-orange-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-fox-orange text-white rounded-lg font-semibold hover:bg-fox-orange-dark transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-fox-orange text-fox-orange rounded-lg font-semibold hover:bg-fox-gray-light transition-colors duration-200;
+}
+
+.section-padding {
+  @apply px-6 py-16 md:px-12 md:py-24;
+}
+
+.container-fox {
+  @apply max-w-6xl mx-auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
