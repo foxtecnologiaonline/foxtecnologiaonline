@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface ProductCardProps {
@@ -7,6 +8,7 @@ interface ProductCardProps {
   href?: string
   badge?: string
   icon?: React.ReactNode
+  logoSrc?: string
   comingSoon?: boolean
 }
 
@@ -16,17 +18,29 @@ export default function ProductCard({
   href,
   badge,
   icon,
+  logoSrc,
   comingSoon = false,
 }: ProductCardProps) {
   const content = (
-    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 h-full flex flex-col ${
+    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col ${
       comingSoon ? 'opacity-60' : 'hover:-translate-y-1'
     }`}>
-      {icon && (
+      {/* Logo ou ícone do produto */}
+      {logoSrc ? (
+        <div className="mb-5">
+          <Image
+            src={logoSrc}
+            alt={title}
+            width={56}
+            height={56}
+            className="rounded-xl"
+          />
+        </div>
+      ) : icon ? (
         <div className="mb-4 text-fox-orange">
           {icon}
         </div>
-      )}
+      ) : null}
 
       <h3 className="text-2xl font-bold text-fox-gray-dark mb-2">
         {title}

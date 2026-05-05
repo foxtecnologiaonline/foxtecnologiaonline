@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import ProductCard from '@/components/ProductCard'
-import { Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Produtos - FOX tecnologIA',
@@ -24,13 +23,13 @@ export default function Produtos() {
       <section className="section-padding bg-white">
         <div className="container-fox">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* ZapScript */}
+            {/* ZapScript.me */}
             <ProductCard
-              title="ZapScript"
-              description="Plataforma de automação para WhatsApp com inteligência artificial. Crie fluxos inteligentes, automatize respostas e integre com seus sistemas."
+              title="ZapScript.me"
+              description="Plataforma para transcrever e resumir os áudios que você recebe no WhatsAPP de forma automática!"
               href="https://zapscript.me"
               badge="Disponível"
-              icon={<Zap size={32} />}
+              logoSrc="/logo-zapscript.svg"
             />
 
             {/* Coming Soon 1 */}
