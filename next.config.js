@@ -7,6 +7,10 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: "/mycollect",
+        destination: "https://mycollect-ten.vercel.app/mycollect",
+      },
+      {
         source: "/mycollect/:path*",
         destination: "https://mycollect-ten.vercel.app/mycollect/:path*",
       },
