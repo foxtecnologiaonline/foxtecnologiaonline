@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     unoptimized: false,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/mycollect/:path*",
+        destination: "https://mycollect-ten.vercel.app/mycollect/:path*",
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig
