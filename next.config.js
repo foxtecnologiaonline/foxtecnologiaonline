@@ -5,14 +5,21 @@ const nextConfig = {
     unoptimized: false,
   },
   async rewrites() {
+    const mycollectUrl = process.env.MYCOLLECT_CLOUD_RUN_URL;
+    const mycollectKey = process.env.MYCOLLECT_APP_KEY;
+
+    if (!mycollectUrl || !mycollectKey) {
+      return [];
+    }
+
     return [
       {
         source: "/mycollect",
-        destination: "https://mycollect-ten.vercel.app/mycollect",
+        destination: `${mycollectUrl}/?key=${mycollectKey}`,
       },
       {
         source: "/mycollect/:path*",
-        destination: "https://mycollect-ten.vercel.app/mycollect/:path*",
+        destination: `${mycollectUrl}/:path*?key=${mycollectKey}`,
       },
     ];
   },
