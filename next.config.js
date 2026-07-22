@@ -25,6 +25,22 @@ const nextConfig = {
         source: "/assets/:path*",
         destination: `${mycollectUrl}/assets/:path*?key=${mycollectKey}`,
       },
+      {
+        source: "/api-proxy",
+        destination: `${mycollectUrl}/api-proxy?key=${mycollectKey}`,
+      },
+      {
+        source: "/api-proxy/:path*",
+        destination: `${mycollectUrl}/api-proxy/:path*?key=${mycollectKey}`,
+      },
+      {
+        source: "/ws-proxy",
+        destination: `${mycollectUrl}/ws-proxy?key=${mycollectKey}`,
+      },
+      {
+        source: "/ws-proxy/:path*",
+        destination: `${mycollectUrl}/ws-proxy/:path*?key=${mycollectKey}`,
+      },
     ];
   },
 }
