@@ -21,6 +21,10 @@ const nextConfig = {
         source: "/mycollect/:path*",
         destination: `${mycollectUrl}/:path*?key=${mycollectKey}`,
       },
+      {
+        source: "/assets/:path*",
+        destination: `${mycollectUrl}/assets/:path*?key=${mycollectKey}`,
+      },
     ];
   },
 }
