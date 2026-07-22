@@ -5,41 +5,18 @@ const nextConfig = {
     unoptimized: false,
   },
   async rewrites() {
+    // URL base do mycollect — pode ser Vercel ou Cloud Run
     const mycollectUrl = process.env.MYCOLLECT_CLOUD_RUN_URL;
-    const mycollectKey = process.env.MYCOLLECT_APP_KEY;
-
-    if (!mycollectUrl || !mycollectKey) {
-      return [];
-    }
+    if (!mycollectUrl) return [];
 
     return [
       {
         source: "/mycollect",
-        destination: `${mycollectUrl}/?key=${mycollectKey}`,
+        destination: `${mycollectUrl}/mycollect`,
       },
       {
         source: "/mycollect/:path*",
-        destination: `${mycollectUrl}/:path*?key=${mycollectKey}`,
-      },
-      {
-        source: "/assets/:path*",
-        destination: `${mycollectUrl}/assets/:path*?key=${mycollectKey}`,
-      },
-      {
-        source: "/api-proxy",
-        destination: `${mycollectUrl}/api-proxy?key=${mycollectKey}`,
-      },
-      {
-        source: "/api-proxy/:path*",
-        destination: `${mycollectUrl}/api-proxy/:path*?key=${mycollectKey}`,
-      },
-      {
-        source: "/ws-proxy",
-        destination: `${mycollectUrl}/ws-proxy?key=${mycollectKey}`,
-      },
-      {
-        source: "/ws-proxy/:path*",
-        destination: `${mycollectUrl}/ws-proxy/:path*?key=${mycollectKey}`,
+        destination: `${mycollectUrl}/mycollect/:path*`,
       },
     ];
   },
