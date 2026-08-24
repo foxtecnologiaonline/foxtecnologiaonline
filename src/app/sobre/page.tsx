@@ -74,7 +74,7 @@ export default function Sobre() {
             Conheça nossos produtos e soluções. Estamos prontos para ajudar seu negócio a crescer.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="/produtos" className="btn-primary">
+            <a href="/#produtos" className="btn-primary">
               Ver Produtos
             </a>
             <a href="/contato" className="btn-secondary">

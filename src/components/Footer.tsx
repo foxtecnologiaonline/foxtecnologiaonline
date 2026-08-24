@@ -31,7 +31,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/produtos" className="hover:text-fox-orange transition-colors">
+                <Link href="/#produtos" className="hover:text-fox-orange transition-colors">
                   Produtos
                 </Link>
               </li>

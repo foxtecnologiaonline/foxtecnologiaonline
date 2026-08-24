@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import ProdutosSection from '@/components/ProdutosSection'
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
       <Hero />
 
       {/* About Preview */}
-      <section className="section-padding bg-fox-gray-light">
+      <section className="section-padding bg-white">
         <div className="container-fox text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-fox-gray-dark mb-6">
             Soluções <span className="text-fox-orange">Inovadoras</span>
@@ -22,6 +23,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProdutosSection />
 
       {/* CTA Section */}
       <section className="section-padding bg-white">

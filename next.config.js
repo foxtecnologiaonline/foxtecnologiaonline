@@ -4,6 +4,15 @@ const nextConfig = {
   images: {
     unoptimized: false,
   },
+  async redirects() {
+    return [
+      {
+        source: '/produtos',
+        destination: '/#produtos',
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     // URL base do mycollect — pode ser Vercel ou Cloud Run
     const mycollectUrl = process.env.MYCOLLECT_CLOUD_RUN_URL;

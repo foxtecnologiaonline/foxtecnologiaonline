@@ -20,7 +20,7 @@ export default function Hero() {
             </div>
 
             <div className="flex gap-4 flex-wrap">
-              <Link href="/produtos" className="btn-primary">
+              <Link href="/#produtos" className="btn-primary">
                 Conhecer Produtos
               </Link>
               <Link href="/contato" className="btn-secondary">
