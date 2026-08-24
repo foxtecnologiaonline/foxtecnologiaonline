@@ -20,30 +20,39 @@ export default function Produtos() {
       </section>
 
       {/* Products Grid */}
+      {/*
+        Descrições de Documentos.shop e Makeapp.me são placeholders: a sessão que
+        gerou esta página não teve acesso de rede a documentos.shop / makeapp.me
+        para copiar o texto/logo exatos. Revisar e ajustar conforme os sites reais.
+      */}
       <section className="section-padding bg-white">
         <div className="container-fox">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* ZapScript.me */}
             <ProductCard
               title="ZapScript.me"
-              description="Plataforma para transcrever e resumir os áudios que você recebe no WhatsAPP de forma automática!"
+              description="Plataforma para transcrever e resumir os áudios que você recebe no WhatsApp de forma automática!"
               href="https://zapscript.me"
               badge="Disponível"
               logoSrc="/logo-zapscript.svg"
             />
 
-            {/* Coming Soon 1 */}
+            {/* Documentos.shop */}
             <ProductCard
-              title="Produto 2"
-              description="Nova solução tecnológica em desenvolvimento. Fique atento para novidades sobre este incrível projeto."
-              comingSoon
+              title="Documentos.shop"
+              description="Plataforma para gerar, organizar e gerenciar seus documentos digitais de forma rápida e prática."
+              href="https://documentos.shop"
+              badge="Disponível"
+              logoSrc="/logo-documentos.svg"
             />
 
-            {/* Coming Soon 2 */}
+            {/* Makeapp.me */}
             <ProductCard
-              title="Produto 3"
-              description="Inovação em progresso. Estamos trabalhando duro para trazer novas soluções para você em breve."
-              comingSoon
+              title="Makeapp.me"
+              description="Crie e publique seus próprios aplicativos de forma simples e rápida, sem precisar programar."
+              href="https://makeapp.me"
+              badge="Disponível"
+              logoSrc="/logo-makeapp.svg"
             />
           </div>
 

@@ -15,13 +15,34 @@ export const COLORS = {
   accent: '#E8E8E8',
 }
 
+// Descrições de Documentos.shop e Makeapp.me são placeholders (sem acesso de
+// rede aos sites reais nesta sessão) — revisar conforme o conteúdo atual.
 export const PRODUCTS = [
   {
     id: 'zapscript',
-    name: 'ZapScript',
+    name: 'ZapScript.me',
     description:
-      'Plataforma de automação para WhatsApp com inteligência artificial. Crie fluxos inteligentes, automatize respostas e integre com seus sistemas.',
+      'Plataforma para transcrever e resumir os áudios que você recebe no WhatsApp de forma automática!',
     href: 'https://zapscript.me',
     badge: 'Disponível',
+    logoSrc: '/logo-zapscript.svg',
+  },
+  {
+    id: 'documentos-shop',
+    name: 'Documentos.shop',
+    description:
+      'Plataforma para gerar, organizar e gerenciar seus documentos digitais de forma rápida e prática.',
+    href: 'https://documentos.shop',
+    badge: 'Disponível',
+    logoSrc: '/logo-documentos.svg',
+  },
+  {
+    id: 'makeapp',
+    name: 'Makeapp.me',
+    description:
+      'Crie e publique seus próprios aplicativos de forma simples e rápida, sem precisar programar.',
+    href: 'https://makeapp.me',
+    badge: 'Disponível',
+    logoSrc: '/logo-makeapp.svg',
   },
 ]
