@@ -24,6 +24,7 @@ export default function ProdutosSection() {
             href="https://zapscript.me"
             badge="Disponível"
             logoSrc="/logo-zapscript.svg"
+            accentColor="#10b981"
           />
 
           {/* Documentos.shop */}
@@ -33,6 +34,7 @@ export default function ProdutosSection() {
             href="https://documentos.shop"
             badge="Disponível"
             logoSrc="/logo-documentos.svg"
+            accentColor="#2563eb"
           />
 
           {/* Makeapp.me */}
@@ -42,6 +44,7 @@ export default function ProdutosSection() {
             href="https://makeapp.me"
             badge="Disponível"
             logoSrc="/logo-makeapp.svg"
+            accentColor="#7c3aed"
           />
         </div>
 

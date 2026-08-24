@@ -2,11 +2,14 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [produtosInView, setProdutosInView] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -14,6 +17,29 @@ export default function Navbar() {
     { href: '/#produtos', label: 'Produtos' },
     { href: '/contato', label: 'Contato' },
   ]
+
+  // Scroll-spy: só a home tem a seção #produtos, então observamos sua
+  // visibilidade para alternar o destaque entre "Home" e "Produtos" no navbar.
+  useEffect(() => {
+    if (pathname !== '/') return
+
+    const target = document.getElementById('produtos')
+    if (!target) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setProdutosInView(entry.isIntersecting),
+      { rootMargin: '-72px 0px -60% 0px' }
+    )
+    observer.observe(target)
+
+    return () => observer.disconnect()
+  }, [pathname])
+
+  const isActive = (href: string) => {
+    if (href === '/#produtos') return pathname === '/' && produtosInView
+    if (href === '/') return pathname === '/' && !produtosInView
+    return pathname === href
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
@@ -24,6 +50,7 @@ export default function Navbar() {
             alt="FOX tecnologIA"
             width={44}
             height={44}
+            sizes="44px"
             className="rounded"
           />
           <span className="text-lg font-bold hidden sm:inline">
@@ -37,7 +64,12 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-fox-gray-dark hover:text-fox-orange transition-colors font-medium"
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className={`transition-colors font-medium ${
+                isActive(link.href)
+                  ? 'text-fox-orange'
+                  : 'text-fox-gray-dark hover:text-fox-orange'
+              }`}
             >
               {link.label}
             </Link>
@@ -60,7 +92,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-fox-gray-dark hover:text-fox-orange transition-colors font-medium"
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  className={`transition-colors font-medium ${
+                    isActive(link.href)
+                      ? 'text-fox-orange'
+                      : 'text-fox-gray-dark hover:text-fox-orange'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

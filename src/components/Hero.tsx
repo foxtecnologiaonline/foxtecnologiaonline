@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative bg-white min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative bg-white min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container-fox px-6 py-20 md:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}

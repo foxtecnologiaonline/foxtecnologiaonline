@@ -10,6 +10,7 @@ interface ProductCardProps {
   icon?: React.ReactNode
   logoSrc?: string
   comingSoon?: boolean
+  accentColor?: string
 }
 
 export default function ProductCard({
@@ -20,11 +21,15 @@ export default function ProductCard({
   icon,
   logoSrc,
   comingSoon = false,
+  accentColor = '#FF7A00',
 }: ProductCardProps) {
   const content = (
-    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col ${
-      comingSoon ? 'opacity-60' : 'hover:-translate-y-1'
-    }`}>
+    <div
+      className={`group bg-white rounded-xl border-t-4 shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col ${
+        comingSoon ? 'opacity-60' : 'hover:-translate-y-1'
+      }`}
+      style={{ borderTopColor: accentColor }}
+    >
       {/* Logo ou ícone do produto */}
       {logoSrc ? (
         <div className="mb-5">
@@ -33,7 +38,7 @@ export default function ProductCard({
             alt={title}
             width={56}
             height={56}
-            className="rounded-xl"
+            className="rounded-xl transition-transform duration-300 group-hover:scale-110"
           />
         </div>
       ) : icon ? (
@@ -61,7 +66,7 @@ export default function ProductCard({
       </p>
 
       {!comingSoon && href && (
-        <div className="flex items-center gap-2 text-fox-orange font-semibold hover:gap-3 transition-all">
+        <div className="flex items-center gap-2 text-fox-orange font-semibold group-hover:gap-3 transition-all">
           Saiba mais
           <ArrowRight size={20} />
         </div>
@@ -80,7 +85,12 @@ export default function ProductCard({
   }
 
   return href ? (
-    <Link href={href} target="_blank" rel="noopener noreferrer">
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block rounded-xl h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-fox-orange focus-visible:ring-offset-2"
+    >
       {content}
     </Link>
   ) : (
