@@ -43,17 +43,18 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
-      <div className="container-fox flex justify-between items-center h-16">
-        <Link href="/" className="flex items-center gap-2">
+      <div className="container-fox px-6 flex justify-between items-center h-16">
+        <Link href="/" className="flex items-center gap-2 min-w-0">
           <Image
             src="/logo.png"
             alt="FOX tecnologIA"
-            width={44}
-            height={44}
-            sizes="44px"
-            className="rounded"
+            width={40}
+            height={40}
+            sizes="40px"
+            className="rounded flex-shrink-0"
+            priority
           />
-          <span className="text-lg font-bold hidden sm:inline">
+          <span className="text-base sm:text-lg font-bold whitespace-nowrap">
             <span className="text-fox-gray-dark">FOX </span><span className="text-fox-orange">tecnolog</span><span className="text-fox-orange-dark font-extrabold">IA</span>
           </span>
         </Link>
