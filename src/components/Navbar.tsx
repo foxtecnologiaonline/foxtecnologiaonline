@@ -5,17 +5,23 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { useAuth } from '@/lib/auth-context'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [produtosInView, setProdutosInView] = useState(false)
   const pathname = usePathname()
+  const { usuario } = useAuth()
 
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/sobre', label: 'Sobre' },
     { href: '/#produtos', label: 'Produtos' },
+    { href: '/produtos', label: 'Loja' },
     { href: '/contato', label: 'Contato' },
+    usuario
+      ? { href: usuario.tipo === 'admin' ? '/admin' : '/minha-conta', label: 'Minha conta' }
+      : { href: '/login', label: 'Entrar' },
   ]
 
   // Scroll-spy: só a home tem a seção #produtos, então observamos sua

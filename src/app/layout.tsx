@@ -4,6 +4,8 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { COMPANY, PRODUCTS } from '@/lib/constants'
+import { AuthProvider } from '@/lib/auth-context'
+import { ToastProvider } from '@/components/ui/Toast'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -78,11 +80,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        <main className="pt-16">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <ToastProvider>
+            <Navbar />
+            <main className="pt-16">
+              {children}
+            </main>
+            <Footer />
+          </ToastProvider>
+        </AuthProvider>
       </body>
     </html>
   )
