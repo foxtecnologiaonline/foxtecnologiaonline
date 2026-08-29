@@ -1,8 +1,9 @@
 {
   "metadata": {
-    "ultima_atualizacao": "2026-08-29T02:45:00Z",
-    "total_projetos": 24,
-    "versao_schema": "1.0"
+    "ultima_atualizacao": "2026-08-29T12:00:00Z",
+    "total_projetos": 30,
+    "versao_schema": "1.1",
+    "nota": "Atualização com 6 repos faltantes: gameroom, nav-engine, impostovolta, gestaocontratosassinaturas, regula-ai, Agendarpage"
   },
   "projetos": [
     {
@@ -368,6 +369,103 @@
       "tipo": "Feature",
       "motivo_arquivado": "Descontinuado",
       "data_arquivamento": "2026-07-16"
+    },
+    {
+      "id": 25,
+      "nome": "Gameroom",
+      "repositorio": "gameroom",
+      "dominio": null,
+      "status": "Em desenvolvimento",
+      "progresso": 45,
+      "tipo": "SaaS Frontend",
+      "descricao": "Frontend para plataforma de ativos digitais (Next.js 14, App Router, Tailwind) - loja pública, área cliente e painel admin",
+      "linguagem": "Next.js/React/TypeScript",
+      "prioridade": "médio",
+      "data_inicio": "2026-07-01",
+      "ultima_sessao": "2026-08-27",
+      "receita": true,
+      "tags": ["nextjs", "frontend", "ativos-digitais"]
+    },
+    {
+      "id": 26,
+      "nome": "Nav Engine",
+      "repositorio": "nav-engine",
+      "dominio": null,
+      "status": "Em desenvolvimento",
+      "progresso": 55,
+      "tipo": "Motor de IA",
+      "descricao": "Motor de navegação por IA (texto + voz) - conduz usuários pelas decisões e configurações do produto",
+      "linguagem": "Node.js/React/TypeScript",
+      "prioridade": "alto",
+      "data_inicio": "2026-06-15",
+      "ultima_sessao": "2026-07-29",
+      "receita": false,
+      "tags": ["ia", "navegacao", "voice", "engine"]
+    },
+    {
+      "id": 27,
+      "nome": "Imposto Volta",
+      "repositorio": "impostovolta",
+      "dominio": null,
+      "status": "Exploração",
+      "progresso": 30,
+      "tipo": "App/Ferramenta",
+      "descricao": "Ferramenta para gestão fiscal e compliance",
+      "linguagem": "Node.js/React",
+      "prioridade": "médio",
+      "data_inicio": "2026-07-20",
+      "ultima_sessao": "2026-07-25",
+      "receita": true,
+      "tags": ["fiscal", "compliance", "imposto"]
+    },
+    {
+      "id": 28,
+      "nome": "Gestão de Contratos e Assinaturas",
+      "repositorio": "gestaocontratosassinaturas",
+      "dominio": null,
+      "status": "Em desenvolvimento",
+      "progresso": 40,
+      "tipo": "SaaS B2G",
+      "descricao": "Auditor de contratos e assinaturas - gestão inteligente de documentos",
+      "linguagem": "Node.js/React",
+      "prioridade": "médio",
+      "data_inicio": "2026-07-10",
+      "ultima_sessao": "2026-07-24",
+      "receita": true,
+      "tags": ["contratos", "assinaturas", "audit"]
+    },
+    {
+      "id": 29,
+      "nome": "Regula AI",
+      "repositorio": "regula-ai",
+      "dominio": null,
+      "status": "Exploração",
+      "progresso": 35,
+      "tipo": "Agente IA / Compliance",
+      "descricao": "Sistema de IA para conformidade regulatória e análise de regulações",
+      "linguagem": "Node.js/Python",
+      "prioridade": "médio",
+      "data_inicio": "2026-07-01",
+      "ultima_sessao": "2026-07-24",
+      "receita": false,
+      "tags": ["ia", "compliance", "regulacao"]
+    },
+    {
+      "id": 30,
+      "nome": "Agendar.page (Repo Próprio)",
+      "repositorio": "Agendarpage",
+      "dominio": "agendar.page",
+      "status": "Pausa",
+      "progresso": 35,
+      "tipo": "SaaS",
+      "descricao": "Plataforma de agendamento com integração WhatsApp (repositório próprio)",
+      "linguagem": "Next.js/React",
+      "prioridade": "médio",
+      "data_inicio": "2026-07-05",
+      "ultima_sessao": "2026-07-17",
+      "receita": true,
+      "motivo_pausa": "Escopo em definição",
+      "tags": ["agendamento", "saas", "whatsapp"]
     }
   ],
   "repositorios": [
@@ -464,18 +562,69 @@
       "projetos": [],
       "dominio": "foxtecnologiaonline.com",
       "ultimo_commit": "2026-08-29"
+    },
+    {
+      "nome": "gameroom",
+      "url": "https://github.com/foxtecnologiaonline/gameroom",
+      "linguagem": "Next.js/React",
+      "status": "Ativo",
+      "projetos": [25],
+      "ultimo_commit": "2026-08-27"
+    },
+    {
+      "nome": "nav-engine",
+      "url": "https://github.com/foxtecnologiaonline/nav-engine",
+      "linguagem": "Node.js/React",
+      "status": "Ativo",
+      "projetos": [26],
+      "ultimo_commit": "2026-07-29"
+    },
+    {
+      "nome": "impostovolta",
+      "url": "https://github.com/foxtecnologiaonline/impostovolta",
+      "linguagem": "Node.js/React",
+      "status": "Exploração",
+      "projetos": [27],
+      "ultimo_commit": "2026-07-25"
+    },
+    {
+      "nome": "gestaocontratosassinaturas",
+      "url": "https://github.com/foxtecnologiaonline/gestaocontratosassinaturas",
+      "linguagem": "Node.js/React",
+      "status": "Ativo",
+      "projetos": [28],
+      "ultimo_commit": "2026-07-24"
+    },
+    {
+      "nome": "regula-ai",
+      "url": "https://github.com/foxtecnologiaonline/regula-ai",
+      "linguagem": "Node.js/Python",
+      "status": "Exploração",
+      "projetos": [29],
+      "ultimo_commit": "2026-07-24"
+    },
+    {
+      "nome": "Agendarpage",
+      "url": "https://github.com/foxtecnologiaonline/Agendarpage",
+      "linguagem": "Next.js/React",
+      "status": "Pausa",
+      "projetos": [30],
+      "dominio": "agendar.page",
+      "ultimo_commit": "2026-07-17"
     }
   ],
   "estatisticas": {
-    "total_projetos": 24,
-    "ativos": 8,
-    "pausa": 6,
-    "exploração": 3,
+    "total_projetos": 30,
+    "ativos": 10,
+    "pausa": 7,
+    "exploração": 5,
     "arquivados": 7,
-    "progresso_medio": 54,
-    "com_receita": 10,
-    "sem_receita": 14,
-    "total_repositorios": 11,
-    "tecnologias_principais": ["Node.js", "React", "Python"]
+    "planejamento": 1,
+    "concluidos": 1,
+    "progresso_medio": 47,
+    "com_receita": 14,
+    "sem_receita": 16,
+    "total_repositorios": 17,
+    "tecnologias_principais": ["Node.js", "React", "Next.js", "Python", "TypeScript"]
   }
 }
