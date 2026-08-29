@@ -11,16 +11,38 @@
       "repositorio": "zapscript",
       "dominio": "zapscript.me",
       "status": "Em desenvolvimento",
-      "progresso": 75,
-      "tipo": "SaaS",
-      "descricao": "Plataforma B2B/B2C automação WhatsApp com 9 módulos",
+      "progresso": 71,
+      "tipo": "SaaS Multi-Plano",
+      "descricao": "Plataforma B2B/B2C automação WhatsApp - Core (60%) | Profissional (72%) | Empresas (75%)",
       "linguagem": "Node.js/React",
-      "modulos": ["Core", "CRM", "Atende", "Cobrança", "Vendas", "Campanhas", "Legendas", "Afiliados", "Navegação IA"],
+      "planos": [
+        {
+          "nome": "Core",
+          "preco": "R$ 29/mês",
+          "progresso": 60,
+          "funcionalidades_prontas": 8,
+          "funcionalidades_total": 12
+        },
+        {
+          "nome": "Profissional",
+          "preco": "R$ 149/mês",
+          "progresso": 72,
+          "funcionalidades_prontas": 20,
+          "funcionalidades_total": 28
+        },
+        {
+          "nome": "Empresas",
+          "preco": "Sob demanda",
+          "progresso": 75,
+          "funcionalidades_prontas": 26,
+          "funcionalidades_total": 35
+        }
+      ],
       "prioridade": "crítico",
       "data_inicio": "2026-06-15",
       "ultima_sessao": "2026-08-27",
       "receita": true,
-      "tags": ["whatsapp", "automacao", "b2b", "saas"]
+      "tags": ["whatsapp", "automacao", "b2b", "saas", "planos"]
     },
     {
       "id": 2,
