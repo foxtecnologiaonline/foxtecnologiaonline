@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Investment Preparation Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #667eea;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-content {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .metric-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .metric-label {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .metric-target {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .progress-container {
+            margin-top: 20px;
+        }
+
+        .progress-item {
+            margin-bottom: 15px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95em;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .stage-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .stage-preseed {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .stage-seed {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .stage-seriesA {
+            background: #bbdefb;
+            color: #1565c0;
+        }
+
+        .checklist {
+            margin-top: 15px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 SaaS Investment Preparation Dashboard</h1>
+            <p class="subtitle">Seu checklist completo para captar investimento em 2026</p>
+            <div class="badge-group">
+                <span class="badge">📊 Métricas</span>
+                <span class="badge">💰 Funding Stages</span>
+                <span class="badge">🎯 Estratégia</span>
+                <span class="badge">✅ 90-Day Plan</span>
+            </div>
+        </header>
+
+        <!-- Alerts -->
+        <div class="alert alert-success">
+            <div>
+                <strong>✓ Ótimas notícias!</strong> SaaSholic e outros investidores estão ativos em LATAM. Se você tiver tração, há capital disponível.
+            </div>
+        </div>
+
+        <!-- Funding Stages Overview -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Pre-Seed (Friends & Family)</div>
+                <div class="metric-grid">
+                    <div class="metric-box">
+                        <div class="metric-label">Valor Típico</div>
+                        <div class="metric-value">R$ 50k-500k</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Timeline</div>
+                        <div class="metric-value">1-2 meses</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">MRR Mínimo</div>
+                        <div class="metric-value">$0+</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Clientes</div>
+                        <div class="metric-value">1-2</div>
+                    </div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-title">✓ Necessário:</div>
+                    Ideia validada, MVP funcional, founders com credibilidade
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Seed Round</div>
+                <div class="metric-grid">
+                    <div class="metric-box">
+                        <div class="metric-label">Valor Típico</div>
+                        <div class="metric-value">R$ 500k-3M</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Timeline</div>
+                        <div class="metric-value">3-6 meses</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">MRR Mínimo</div>
+                        <div class="metric-value">$10k+</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Clientes</div>
+                        <div class="metric-value">5-10+</div>
+                    </div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-title">✓ Necessário:</div>
+                    Tração comprovada, unit economics claros, crescimento 10-15% mês
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Series A</div>
+                <div class="metric-grid">
+                    <div class="metric-box">
+                        <div class="metric-label">Valor Típico</div>
+                        <div class="metric-value">R$ 2M-10M+</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Timeline</div>
+                        <div class="metric-value">4-8 meses</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">ARR Mínimo</div>
+                        <div class="metric-value">$1M+</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Crescimento</div>
+                        <div class="metric-value">3-5x</div>
+                    </div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-title">✓ Necessário:</div>
+                    NRR >110%, Churn <5% mensal, Roadmap claro
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="card">
+            <div class="card-title">📊 Métricas Essenciais Que VCs Analisam</div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Alvo 2026</th>
+                            <th>Por que importa</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MRR Growth</strong></td>
+                            <td>10-15% ao mês</td>
+                            <td>Velocidade de crescimento</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Churn Rate</strong></td>
+                            <td>&lt; 5% mensal</td>
+                            <td>Saúde do negócio</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NRR (Net Revenue Retention)</strong></td>
+                            <td>&gt; 110%</td>
+                            <td>Expansão endógena</td>
+                            <td><span class="stage-badge stage-seriesA">Series A</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gross Margin</strong></td>
+                            <td>&gt; 70%</td>
+                            <td>Sustentabilidade</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LTV/CAC Ratio</strong></td>
+                            <td>&gt; 3x</td>
+                            <td>Viabilidade econômica</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NPS (Net Promoter Score)</strong></td>
+                            <td>&gt; 50</td>
+                            <td>Qualidade do produto</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CAC Payback</strong></td>
+                            <td>12-18 meses</td>
+                            <td>Fluxo de caixa</td>
+                            <td><span class="stage-badge stage-seed">Seed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rule of 40</strong></td>
+                            <td>&gt; 40</td>
+                            <td>Equilíbrio crescimento</td>
+                            <td><span class="stage-badge stage-seriesA">Series A</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 90 Day Plan -->
+        <div class="card">
+            <div class="card-title">⏱️ 90-Day Investment Preparation Plan</div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <h3>Semanas 1-4: Estrutura Financeira</h3>
+                        <p>Organize dados, implemente tracking de MRR/ARR, crie dashboard, monte data room</p>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task1">
+                                <label for="task1">Implementar tracking de MRR, ARR, Churn</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task2">
+                                <label for="task2">Organizar DRE mensal últimos 12 meses</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task3">
+                                <label for="task3">Calcular CAC, LTV, Gross Margin</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task4">
+                                <label for="task4">Montar data room organizado</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h3>Semanas 5-8: Narrativa & Positioning</h3>
+                        <p>Escreva executive summary, defina TAM, crie pitch deck, prepare product demo</p>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task5">
+                                <label for="task5">Escrever Executive Summary (1 página)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task6">
+                                <label for="task6">Calcular TAM e oportunidade</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task7">
+                                <label for="task7">Criar pitch deck 15-20 slides</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task8">
+                                <label for="task8">Documentar Product Roadmap 12 meses</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <h3>Semanas 9-12: Tração & Pitch</h3>
+                        <p>Obtenha case studies, colete testimonials, faça pitch 20-30x, refine deck</p>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task9">
+                                <label for="task9">Obter 2-3 case studies de clientes</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task10">
+                                <label for="task10">Montar vídeo de demo do produto</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task11">
+                                <label for="task11">Coletar testimonials e NPS</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="task12">
+                                <label for="task12">Fazer 20-30 pitches para feedback</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span>Progresso Geral</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SaaSholic Profile -->
+        <div class="card">
+            <div class="card-title">🎯 SaaSholic: Seu Alvo de Investimento</div>
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Especialidade</div>
+                    <div class="metric-value">Seed SaaS</div>
+                    <div class="metric-target">LATAM focused</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Cheque Típico</div>
+                    <div class="metric-value">$100k-$500k</div>
+                    <div class="metric-target">R$ 500k-2.5M</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Portfolio</div>
+                    <div class="metric-value">45+ startups</div>
+                    <div class="metric-target">Ativas em LATAM</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Suporte</div>
+                    <div class="metric-value">Tático</div>
+                    <div class="metric-target">Sales, Marketing, Pricing</div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <div class="highlight-title">✓ O que SaaSholic busca:</div>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>MVP/Produto vivo com receita</li>
+                    <li>Primeiros $1k-$10k MRR</li>
+                    <li>Founders com experiência</li>
+                    <li>Foco em SaaS B2B</li>
+                    <li>Mercado LATAM ou expansão regional</li>
+                </ul>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary">💌 Enviar Pitch para SaaSholic</button>
+                <button class="btn-secondary">🌐 Visitar saasholic.com</button>
+            </div>
+        </div>
+
+        <!-- Best Niches 2026 -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">💡 Nichos em Alta em 2026</div>
+                <div class="card-content">
+                    <p><strong>🔒 Compliance & RegTech</strong><br/>
+                    LGPD, automação de auditorias, conformidade regulatória<br/>
+                    <span style="color: #999;">Crescimento: +20% anual</span></p>
+
+                    <p style="margin-top: 15px;"><strong>🤖 AI-Powered Analytics</strong><br/>
+                    Insights acionáveis, forecasting, business intelligence<br/>
+                    <span style="color: #999;">Tendência emergente</span></p>
+
+                    <p style="margin-top: 15px;"><strong>⚖️ Vertical SaaS</strong><br/>
+                    Legal Tech, HR Tech, Supply Chain<br/>
+                    <span style="color: #999;">Maiores margens</span></p>
+
+                    <p style="margin-top: 15px;"><strong>🔗 Integrações & Middlewares</strong><br/>
+                    iPaaS, automação, data syncing<br/>
+                    <span style="color: #999;">Demanda crescente</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🚨 Checklist Final: Você Está Pronto?</div>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready1">
+                        <label for="ready1">Tem >$1k MRR de clientes reais</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready2">
+                        <label for="ready2">Churn <10% mensal</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready3">
+                        <label for="ready3">NPS > 40</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready4">
+                        <label for="ready4">Pitch deck 15-20 slides</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready5">
+                        <label for="ready5">DRE completa e organizada</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready6">
+                        <label for="ready6">3+ clientes como reference</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready7">
+                        <label for="ready7">Cap table atualizada</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ready8">
+                        <label for="ready8">Roadmap de 12 meses</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📚 Guia de preparação para captação de investimento em SaaS - 2026</p>
+            <p>Baseado em dados de VCs, Angels e Seed Investors ativos em LATAM</p>
+        </div>
+    </div>
+
+    <script>
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checkboxes.length;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressPercent').textContent = percent + '%';
+        }
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+
+        // Button actions
+        document.querySelector('.btn-primary').addEventListener('click', () => {
+            alert('Acesse: pitch@saasholic.com\n\nPrepare seu pitch e envie:\n- Deck (PDF)\n- Traction data (últimos 6 meses)\n- Founder bios');
+        });
+
+        document.querySelector('.btn-secondary').addEventListener('click', () => {
+            window.open('https://www.saasholic.com/', '_blank');
+        });
+    </script>
+</body>
+</html>
