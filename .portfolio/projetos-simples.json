@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "versao": "2.0",
+    "titulo": "Portfolio — Projetos Ativos",
+    "total_projetos": 12,
+    "ultima_atualizacao": "2026-08-29"
+  },
+  "projetos": [
+    {
+      "id": 1,
+      "nome": "ZapScript.me",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Ativo"
+    },
+    {
+      "id": 2,
+      "nome": "MyKollect",
+      "repo": "mycollect",
+      "dominio": "mykollect.com",
+      "status": "Construção"
+    },
+    {
+      "id": 3,
+      "nome": "Documentos.shop",
+      "repo": "documentos_me",
+      "dominio": "documentos.shop",
+      "status": "MVP"
+    },
+    {
+      "id": 4,
+      "nome": "Documentos.shop/Kit Eleições 2026",
+      "repo": "documentos_me",
+      "dominio": "documentos.shop/kit",
+      "status": "Construção"
+    },
+    {
+      "id": 5,
+      "nome": "MakeApp.me",
+      "repo": "makeapp.me",
+      "dominio": "makeapp.me",
+      "status": "Construção"
+    },
+    {
+      "id": 6,
+      "nome": "Posts LinkedIn — Autoridade Gestão",
+      "repo": "fox-mvp",
+      "dominio": null,
+      "status": "Início"
+    },
+    {
+      "id": 7,
+      "nome": "RPPS — Produtos",
+      "repo": "makeapp.me",
+      "dominio": null,
+      "status": "Início"
+    },
+    {
+      "id": 8,
+      "nome": "Gameroom",
+      "repo": "gameroom",
+      "dominio": null,
+      "status": "Construção"
+    },
+    {
+      "id": 9,
+      "nome": "Gamebots",
+      "repo": "Gamebots-mvp",
+      "dominio": null,
+      "status": "MVP"
+    },
+    {
+      "id": 10,
+      "nome": "Máquina de Low Ticket",
+      "repo": "fox-mvp",
+      "dominio": null,
+      "status": "Início"
+    },
+    {
+      "id": 11,
+      "nome": "Consórcio Livre",
+      "repo": null,
+      "dominio": null,
+      "status": "Início"
+    },
+    {
+      "id": 12,
+      "nome": "Milhas Livre / Mart-Milhas",
+      "repo": null,
+      "dominio": null,
+      "status": "Início"
+    }
+  ]
+}
