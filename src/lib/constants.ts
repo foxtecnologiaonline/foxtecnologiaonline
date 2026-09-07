@@ -45,4 +45,13 @@ export const PRODUCTS = [
     badge: 'Disponível',
     logoSrc: '/logo-makeapp.svg',
   },
+  {
+    id: 'mykollect',
+    name: 'mykollect',
+    description:
+      'Tire uma foto, a IA identifica o item e você confirma. Catalogue sua coleção em segundos — sem digitação, sem planilhas.',
+    href: 'https://mykollect.com',
+    badge: 'Disponível',
+    logoSrc: '/logo-mykollect.svg',
+  },
 ]

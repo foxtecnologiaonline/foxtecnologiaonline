@@ -16,7 +16,7 @@ export default function ProdutosSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* ZapScript.me */}
           <ProductCard
             title="ZapScript.me"
@@ -45,6 +45,16 @@ export default function ProdutosSection() {
             badge="Disponível"
             logoSrc="/logo-makeapp.svg"
             accentColor="#7c3aed"
+          />
+
+          {/* mykollect */}
+          <ProductCard
+            title="mykollect"
+            description="Tire uma foto, a IA identifica o item e você confirma. Catalogue sua coleção em segundos — sem digitação, sem planilhas."
+            href="https://mykollect.com"
+            badge="Disponível"
+            logoSrc="/logo-mykollect.svg"
+            accentColor="#1f4f3d"
           />
         </div>
 
