@@ -2,93 +2,170 @@
   "metadata": {
     "versao": "2.0",
     "titulo": "Portfolio — Projetos Ativos",
-    "total_projetos": 12,
-    "ultima_atualizacao": "2026-08-29"
+    "total_projetos": 23,
+    "ultima_atualizacao": "2026-09-14"
   },
   "projetos": [
     {
       "id": 1,
-      "nome": "ZapScript.me",
+      "nome": "ZapScript.Core",
       "repo": "zapscript",
       "dominio": "zapscript.me",
       "status": "Ativo"
     },
     {
       "id": 2,
-      "nome": "MyKollect",
-      "repo": "mycollect",
-      "dominio": "mykollect.com",
-      "status": "Construção"
+      "nome": "ZapScript.Onboarding",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Working"
     },
     {
       "id": 3,
-      "nome": "Documentos.shop",
+      "nome": "ZapScript.Campanhas",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "MVP"
+    },
+    {
+      "id": 4,
+      "nome": "ZapScript.Atende/Bot Atendimento",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "MVP"
+    },
+    {
+      "id": 5,
+      "nome": "ZapScript.Copiloto",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Working"
+    },
+    {
+      "id": 6,
+      "nome": "ZapScript.WAWeb",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Working"
+    },
+    {
+      "id": 7,
+      "nome": "ZapScript.MetaOficial",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Working"
+    },
+    {
+      "id": 8,
+      "nome": "ZapScript.Marketing do APP",
+      "repo": "zapscript",
+      "dominio": "zapscript.me",
+      "status": "Working"
+    },
+    {
+      "id": 9,
+      "nome": "Mykollect.Beta",
+      "repo": "mycollect",
+      "dominio": "mykollect.com",
+      "status": "Ativo"
+    },
+    {
+      "id": 10,
+      "nome": "Mykollect.Marketing do APP",
+      "repo": "mycollect",
+      "dominio": "mykollect.com",
+      "status": "Working"
+    },
+    {
+      "id": 11,
+      "nome": "Mykollect.market",
+      "repo": "mycollect",
+      "dominio": null,
+      "status": "Idéia"
+    },
+    {
+      "id": 12,
+      "nome": "MKTFast.Marketing Multicanal",
+      "repo": "mktfast",
+      "dominio": null,
+      "status": "Working"
+    },
+    {
+      "id": 13,
+      "nome": "ConsórcioLivre.Beta",
+      "repo": null,
+      "dominio": null,
+      "status": "Working"
+    },
+    {
+      "id": 14,
+      "nome": "MartMilhas.Beta",
+      "repo": null,
+      "dominio": null,
+      "status": "Working"
+    },
+    {
+      "id": 15,
+      "nome": "Gameroom.Beta",
+      "repo": "gameroom",
+      "dominio": null,
+      "status": "Working"
+    },
+    {
+      "id": 16,
+      "nome": "Gamebots.Beta",
+      "repo": "Gamebots-mvp",
+      "dominio": null,
+      "status": "Idéia"
+    },
+    {
+      "id": 17,
+      "nome": "Documentosshop.Beta",
+      "repo": "documentos_me",
+      "dominio": "documentos.shop",
+      "status": "Ativo"
+    },
+    {
+      "id": 18,
+      "nome": "Documentosshop.Marketing do APP",
+      "repo": "documentos_me",
+      "dominio": "documentos.shop",
+      "status": "Working"
+    },
+    {
+      "id": 19,
+      "nome": "Documentosshop.Kit Eleições 2026",
       "repo": "documentos_me",
       "dominio": "documentos.shop",
       "status": "MVP"
     },
     {
-      "id": 4,
-      "nome": "Documentos.shop/Kit Eleições 2026",
+      "id": 20,
+      "nome": "Documentosshop.APP Presta Contas",
       "repo": "documentos_me",
-      "dominio": "documentos.shop/kit",
-      "status": "Construção"
+      "dominio": "documentos.shop",
+      "status": "Working"
     },
     {
-      "id": 5,
-      "nome": "MakeApp.me",
+      "id": 21,
+      "nome": "Makeapp.Beta",
       "repo": "makeapp.me",
       "dominio": "makeapp.me",
-      "status": "Construção"
+      "status": "Idéia"
     },
     {
-      "id": 6,
-      "nome": "Posts LinkedIn — Autoridade Gestão",
-      "repo": "fox-mvp",
-      "dominio": null,
-      "status": "Início"
-    },
-    {
-      "id": 7,
-      "nome": "RPPS — Produtos",
-      "repo": "makeapp.me",
-      "dominio": null,
-      "status": "Início"
-    },
-    {
-      "id": 8,
-      "nome": "Gameroom",
-      "repo": "gameroom",
-      "dominio": null,
-      "status": "Construção"
-    },
-    {
-      "id": 9,
-      "nome": "Gamebots",
-      "repo": "Gamebots-mvp",
-      "dominio": null,
-      "status": "MVP"
-    },
-    {
-      "id": 10,
-      "nome": "Máquina de Low Ticket",
-      "repo": "fox-mvp",
-      "dominio": null,
-      "status": "Início"
-    },
-    {
-      "id": 11,
-      "nome": "Consórcio Livre",
+      "id": 22,
+      "nome": "Gestãonapratica.Beta",
       "repo": null,
       "dominio": null,
-      "status": "Início"
+      "status": "Working"
     },
     {
-      "id": 12,
-      "nome": "Milhas Livre / Mart-Milhas",
+      "id": 23,
+      "nome": "AgenteNews.Beta",
       "repo": null,
       "dominio": null,
-      "status": "Início"
+      "status": "Working"
     }
   ]
 }
