@@ -14,7 +14,7 @@ Dashboard público e responsivo com **12 projetos principais** em acompanhamento
 
 **URL do Dashboard:**
 ```
-https://claude.ai/code/artifact/76c5fc78-d9bc-45dd-a7f1-b42d6a7f2975
+https://claude.ai/code/artifact/830bc67e-d8b5-4be2-9f45-756b1d9e545c
 ```
 
 Funciona em:
