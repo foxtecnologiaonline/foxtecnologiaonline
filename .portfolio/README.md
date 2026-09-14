@@ -14,7 +14,7 @@ Dashboard público e responsivo com **12 projetos principais** em acompanhamento
 
 **URL do Dashboard:**
 ```
-https://claude.ai/code/artifact/f5849b5e-aca3-405c-8c13-a3f93890d2fe
+https://claude.ai/code/artifact/76c5fc78-d9bc-45dd-a7f1-b42d6a7f2975
 ```
 
 Funciona em:
@@ -55,7 +55,7 @@ Estrutura:
 - `nome`: Nome do projeto
 - `repo`: Nome do repositório no GitHub
 - `dominio`: URL do domínio (`null` se não houver)
-- `status`: Um de: Ativo, Construção, MVP, Início
+- `status`: Um de: Ativo, MVP, Working, Idéia
 
 ---
 
@@ -91,22 +91,19 @@ Para atualizar o artifact com novos dados:
 
 ---
 
-## 📊 Projetos Atuais (12 Total)
+## 📊 Projetos Atuais (23 Total)
 
-| ID | Nome | Repo | Status |
-|---|---|---|---|
-| 1 | ZapScript.me | zapscript | Ativo |
-| 2 | MyKollect | mycollect | Construção |
-| 3 | Documentos.shop | documentos_me | MVP |
-| 4 | Documentos.shop/Kit Eleições 2026 | documentos_me | Construção |
-| 5 | MakeApp.me | makeapp.me | Construção |
-| 6 | Posts LinkedIn — Autoridade Gestão | fox-mvp | Início |
-| 7 | RPPS — Produtos | makeapp.me | Início |
-| 8 | Gameroom | gameroom | Construção |
-| 9 | Gamebots | Gamebots-mvp | MVP |
-| 10 | Máquina de Low Ticket | fox-mvp | Início |
-| 11 | Consórcio Livre | — | Início |
-| 12 | Milhas Livre / Mart-Milhas | — | Início |
+**Distribuição por Status:**
+- **Ativo** (3): ZapScript.Core, Mykollect.Beta, Documentosshop.Beta
+- **MVP** (3): ZapScript.Campanhas, ZapScript.Atende, Documentosshop.Kit Eleições 2026
+- **Working** (14): Módulos em desenvolvimento
+- **Idéia** (3): Conceitos iniciais
+
+**Principais Repositórios:**
+- `zapscript` (8 módulos)
+- `documentos_me` (4 projetos)
+- `mycollect` (3 projetos)
+- Outros: gameroom, makeapp.me, mktfast, Gamebots-mvp
 
 ---
 
@@ -121,10 +118,10 @@ Para atualizar o artifact com novos dados:
 Detecta automaticamente a preferência do navegador
 
 ### Status Badges
-- 🔴 **Início** (Vermelho): Fase inicial
-- 🟡 **Construção** (Amarelo): Em desenvolvimento
-- 🟢 **MVP** (Verde): Mínimo viável
 - 🔵 **Ativo** (Azul): Em produção
+- 🟢 **MVP** (Verde): Beta/Mínimo viável
+- 🟡 **Working** (Amarelo): Em desenvolvimento
+- 🟣 **Idéia** (Roxo): Conceito inicial
 
 ### Links de Domínio
 Clique nos domínios da coluna 3 para acessar os sites
