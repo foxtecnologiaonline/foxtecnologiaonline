@@ -14,15 +14,17 @@ interface SendEmailParams {
   to: string
   subject: string
   html: string
+  replyTo?: string
 }
 
-export async function sendEmail({ to, subject, html }: SendEmailParams) {
+export async function sendEmail({ to, subject, html, replyTo }: SendEmailParams) {
   try {
     const info = await transporter.sendMail({
       from: process.env.ZOHO_EMAIL,
       to,
       subject,
       html,
+      replyTo,
     })
 
     return {
@@ -39,8 +41,15 @@ export function generateContactEmailHTML(data: {
   name: string
   email: string
   phone?: string
+  organization?: string
+  cnpj?: string
+  requestType: string
   message: string
 }): string {
+  const optional = (label: string, value?: string) =>
+    value
+      ? `<div class="field"><span class="label">${label}:</span><p>${escapeHtml(value)}</p></div>`
+      : ''
   return `
     <!DOCTYPE html>
     <html>
@@ -64,6 +73,12 @@ export function generateContactEmailHTML(data: {
           </div>
 
           <div class="content">
+            <div class="field">
+              <span class="label">Tipo de solicitação:</span>
+              <p>${escapeHtml(data.requestType)}</p>
+            </div>
+            ${optional('Órgão / empresa', data.organization)}
+            ${optional('CNPJ', data.cnpj)}
             <div class="field">
               <span class="label">Nome:</span>
               <p>${escapeHtml(data.name)}</p>
@@ -134,7 +149,7 @@ export function generateReplyEmailHTML(name: string): string {
 
           <div class="footer">
             <p><a href="https://www.foxtecnologia.online">www.foxtecnologia.online</a></p>
-            <p>&copy; 2024 FOX tecnologIA. Todos os direitos reservados.</p>
+            <p>&copy; ${new Date().getFullYear()} FOX tecnologIA. Todos os direitos reservados.</p>
           </div>
         </div>
       </body>
