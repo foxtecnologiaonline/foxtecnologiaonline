@@ -17,7 +17,7 @@ export const contactSchema = z.object({
   requestType: z.enum(REQUEST_TYPES),
   message: z.string().trim().min(10, 'Conte um pouco mais (mín. 10 caracteres)').max(5000),
   // Honeypot anti-spam: humanos não preenchem.
-  website: z.string().max(0).optional(),
+  website: z.string().max(200).optional(),
 })
 
 export type ContactData = z.infer<typeof contactSchema>

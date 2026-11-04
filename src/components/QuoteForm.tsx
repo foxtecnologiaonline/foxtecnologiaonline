@@ -10,7 +10,7 @@ import { REQUEST_TYPES, whatsappLink } from '@/lib/constants'
 type RequestType = (typeof REQUEST_TYPES)[number]
 
 export default function QuoteForm({ defaultType = REQUEST_TYPES[0] }: { defaultType?: RequestType }) {
-  const [status, setStatus] = useState<'idle' | 'ok' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'ok' | 'error' | 'limit'>('idle')
   const {
     register,
     handleSubmit,
@@ -29,6 +29,7 @@ export default function QuoteForm({ defaultType = REQUEST_TYPES[0] }: { defaultT
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
+      if (res.status === 429) return setStatus('limit')
       if (!res.ok) throw new Error()
       setStatus('ok')
       reset({ requestType: data.requestType })
@@ -92,7 +93,16 @@ export default function QuoteForm({ defaultType = REQUEST_TYPES[0] }: { defaultT
       <div aria-live="polite">
         {status === 'ok' && (
           <p className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
-            Recebemos sua solicitação! Você também vai receber uma confirmação por e-mail.
+            Recebemos sua solicitação! Retornaremos em breve pelo e-mail informado.
+          </p>
+        )}
+        {status === 'limit' && (
+          <p className="rounded-xl border border-fox-amber/30 bg-fox-amber/10 px-4 py-3 text-sm text-fox-amber">
+            Você enviou várias solicitações seguidas. Aguarde alguns minutos ou{' '}
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+              fale pelo WhatsApp
+            </a>
+            .
           </p>
         )}
         {status === 'error' && (

@@ -14,6 +14,7 @@ export default function ContatoPage({ searchParams }: { searchParams: { assunto?
       <div className="pointer-events-none absolute -right-32 -top-48 h-[520px] w-[520px] rounded-full bg-[#FF5A00] opacity-25 blur-[90px]" />
       <div className="container-fox relative">
         <ContactBlock
+          headingAs="h1"
           defaultType={defaultType}
           title={<>Vamos <span className="grad-text">conversar?</span></>}
           subtitle="Peça uma cotação, envie um edital ou tire dúvidas sobre nossos produtos. Respondemos por e-mail ou WhatsApp."
