@@ -1,88 +1,46 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { COMPANY } from '@/lib/constants'
+import { PageHero } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Sobre - FOX tecnologIA',
-  description: 'Conheça a FOX tecnologIA, nossa missão e visão para o futuro.',
+  title: 'Sobre',
+  description: 'Conheça a FOX tecnologIA: fornecimento de tecnologia para governo e empresas e desenvolvimento de produtos com IA.',
+  alternates: { canonical: '/sobre' },
 }
 
-export default function Sobre() {
+const PILLARS = [
+  { title: 'Transparência', text: 'Propostas claras, sem letras miúdas.' },
+  { title: 'Agilidade', text: 'Resposta rápida a cotações e prazos de edital.' },
+  { title: 'IA na prática', text: 'Usamos no dia a dia a tecnologia que entregamos.' },
+  { title: 'Pós-venda', text: 'Suporte e acompanhamento depois da compra.' },
+]
+
+export default function SobrePage() {
   return (
-    <div>
-      {/* Header */}
-      <section className="section-padding bg-gradient-to-br from-fox-orange to-fox-orange-dark text-white">
-        <div className="container-fox text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Sobre Nós</h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Conheça a história e os valores da FOX tecnologIA
-          </p>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="section-padding bg-white">
-        <div className="container-fox max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-fox-gray-dark mb-6">
-            Quem Somos
-          </h2>
-          <p className="text-lg text-fox-gray-dark opacity-80 leading-relaxed">
-            A FOX tecnologIA é uma empresa especializada em soluções tecnológicas inovadoras.
-            Nascemos com o propósito de transformar ideias em produtos digitais que façam a diferença.
-            Com uma equipe dedicada e apaixonada por tecnologia, buscamos entregar soluções que
-            agregam valor real aos nossos clientes e parceiros.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission and Vision */}
-      <section className="section-padding bg-fox-gray-light">
-        <div className="container-fox">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Mission */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-3xl font-bold text-fox-orange mb-4">
-                Nossa Missão
-              </h3>
-              <p className="text-fox-gray-dark opacity-80 leading-relaxed">
-                Fornecer soluções tecnológicas inovadoras e de alta qualidade que capacitem
-                empresas e indivíduos a alcançar seus objetivos através da transformação digital.
-                Comprometemo-nos com excelência, inovação e atendimento ao cliente em cada projeto.
-              </p>
+    <>
+      <PageHero
+        label="Sobre a FOX"
+        title={<>{COMPANY.tagline}, <span className="grad-text">em duas frentes.</span></>}
+        subtitle="A FOX tecnologIA fornece licenças, IA e sistemas de gestão para quem precisa comprar tecnologia com segurança — e desenvolve produtos próprios com inteligência artificial. Essa experiência prática com IA é o que levamos para cada cliente."
+      >
+        <Link href="/licitacoes" className="btn-primary">Licitações <ArrowRight size={18} /></Link>
+        <Link href="/produtos" className="btn-ghost">Produtos</Link>
+      </PageHero>
+      <section className="pb-[72px] md:pb-[110px]">
+        <div className="container-fox grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {PILLARS.map((p) => (
+            <div key={p.title} className="card p-7">
+              <h2 className="mb-2 text-xl font-bold">{p.title}</h2>
+              <p className="text-ink-300">{p.text}</p>
             </div>
-
-            {/* Vision */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-3xl font-bold text-fox-orange mb-4">
-                Nossa Visão
-              </h3>
-              <p className="text-fox-gray-dark opacity-80 leading-relaxed">
-                Ser referência em soluções tecnológicas inovadoras, reconhecida pela qualidade,
-                confiabilidade e impacto positivo que gera. Visamos criar um futuro onde a
-                tecnologia seja acessível, intuitiva e transformadora para todos.
-              </p>
-            </div>
-          </div>
+          ))}
+        </div>
+        <div className="container-fox mt-10 text-sm text-ink-400">
+          {COMPANY.legalName} · CNPJ {COMPANY.cnpj} · {COMPANY.coverage}
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-white">
-        <div className="container-fox text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold text-fox-gray-dark mb-6">
-            Vamos Trabalhar Juntos?
-          </h2>
-          <p className="text-lg text-fox-gray-dark opacity-80 mb-8">
-            Conheça nossos produtos e soluções. Estamos prontos para ajudar seu negócio a crescer.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a href="/#produtos" className="btn-primary">
-              Ver Produtos
-            </a>
-            <a href="/contato" className="btn-secondary">
-              Entre em Contato
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   )
 }
