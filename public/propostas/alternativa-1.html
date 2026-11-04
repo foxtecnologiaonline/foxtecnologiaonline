@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOX tecnologIA · Alternativa 1 — Institucional</title>
+<meta name="description" content="FOX tecnologIA: fornecimento de licenças de software, IA e sistemas de gestão para órgãos públicos e empresas, e produtos digitais próprios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF7A00; --orange-d:#E86A00; --orange-50:#FFF4EA;
+    --ink:#1E2528; --ink-2:#4A5459; --line:#E6E8EA; --bg:#FFFFFF; --soft:#F6F7F8; --navy:#14202B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  @media(max-width:600px){.wrap{padding:0 16px}}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;font-size:15px;transition:.2s;border:2px solid transparent;cursor:pointer;font-family:inherit}
+  .btn-p{background:var(--orange);color:#fff}.btn-p:hover{background:var(--orange-d)}
+  .btn-o{border-color:var(--ink);color:var(--ink)}.btn-o:hover{background:var(--ink);color:#fff}
+  .btn-w{background:#fff;color:var(--navy)}.btn-w:hover{background:var(--orange-50)}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-d);margin-bottom:12px}
+  section{padding:96px 0}
+  @media(max-width:700px){section{padding:64px 0}}
+  .sec-head{max-width:720px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+  .sec-head p{font-size:18px;color:var(--ink-2)}
+
+  /* topbar + nav */
+  .topbar{background:var(--navy);color:#C9D2D8;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+  .topbar b{color:#fff;font-weight:500}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo img{height:44px;width:auto}
+  nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  nav a{font-weight:500;color:var(--ink-2)}nav a:hover{color:var(--orange-d)}
+  .menu-btn{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;transition:.2s}
+  @media(max-width:900px){
+    .menu-btn{display:block}
+    nav{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none}
+    nav.open{display:block}
+    nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 16px}
+    nav li a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+    nav li:last-child a{border:0;margin-top:12px;justify-content:center}
+  }
+
+  /* hero */
+  .hero{padding:72px 0 88px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(36px,5.2vw,60px);margin-bottom:20px}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero p.lead{font-size:19px;color:var(--ink-2);max-width:560px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:36px;color:var(--ink-2);font-size:14px}
+  .badges span{display:flex;align-items:center;gap:8px}
+  .badges svg{color:var(--orange)}
+  .paths{display:grid;gap:16px}
+  .path{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;transition:.2s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .path:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:0 12px 28px rgba(20,32,43,.08)}
+  .path .ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--orange-50);color:var(--orange-d);display:grid;place-items:center}
+  .path h3{font-size:20px;margin-bottom:4px}
+  .path p{color:var(--ink-2);font-size:15px}
+  .path .go{margin-top:10px;font-weight:700;color:var(--orange-d);font-size:14px}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+  /* licitações */
+  .modal-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500}
+  .chip b{color:var(--orange-d)}
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  @media(max-width:1000px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.cat-grid{grid-template-columns:1fr}}
+  .cat{border:1px solid var(--line);border-radius:16px;padding:28px;background:#fff;display:flex;flex-direction:column}
+  .cat .ic{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:18px}
+  .cat h3{font-size:19px;margin-bottom:8px}
+  .cat p{color:var(--ink-2);font-size:15px;margin-bottom:14px}
+  .cat ul{list-style:none;font-size:14px;color:var(--ink-2);display:grid;gap:6px;margin-top:auto}
+  .cat li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);margin-right:10px;transform:translateY(-2px)}
+
+  .process{margin-top:72px;background:var(--navy);color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+  .process h3{font-size:32px;margin-bottom:14px}
+  .process p{color:#B8C3CA}
+  .steps{list-style:none;display:grid;gap:22px;counter-reset:s}
+  .steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;counter-increment:s}
+  .steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700}
+  .steps h4{font-size:18px;margin-bottom:2px}
+  .steps p{font-size:15px}
+  @media(max-width:900px){.process{grid-template-columns:1fr;padding:32px 22px}}
+
+  .docs{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .doc{background:var(--soft);border-radius:14px;padding:22px;font-size:15px;color:var(--ink-2)}
+  .doc strong{display:block;color:var(--ink);font-family:'Space Grotesk';font-size:17px;margin-bottom:4px}
+  @media(max-width:800px){.docs{grid-template-columns:1fr}}
+
+  /* produtos */
+  #produtos{background:var(--soft)}
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:960px){.prod-grid{grid-template-columns:1fr}}
+  .prod{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}
+  .prod:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,32,43,.1)}
+  .prod .top{height:150px;display:grid;place-items:center;position:relative}
+  .prod .top svg.logo-p{width:72px;height:72px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.18))}
+  .prod .body{padding:26px;display:flex;flex-direction:column;flex:1}
+  .prod .tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .prod h3{font-size:24px;margin-bottom:8px}
+  .prod p{color:var(--ink-2);font-size:15px;margin-bottom:22px}
+  .prod .link{margin-top:auto;font-weight:700;display:inline-flex;gap:6px;align-items:center}
+
+  /* sobre */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about .pillars{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .pillar{border-left:3px solid var(--orange);padding:6px 0 6px 16px}
+  .pillar strong{display:block;font-family:'Space Grotesk';font-size:18px}
+  .pillar span{color:var(--ink-2);font-size:15px}
+  @media(max-width:900px){.about{grid-template-columns:1fr}.about .pillars{grid-template-columns:1fr}}
+
+  /* contato */
+  #contato{background:linear-gradient(135deg,var(--navy),#22313F);color:#fff}
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .contact h2{font-size:clamp(30px,4vw,42px);margin-bottom:14px}
+  .contact p{color:#C2CCD2}
+  .contact .info{margin-top:28px;display:grid;gap:12px}
+  .contact .info a{display:flex;gap:10px;align-items:center;color:#fff;font-weight:500}
+  form{background:#fff;color:var(--ink);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form .full{grid-column:1/-1}
+  label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--orange);border-color:transparent}
+  textarea{min-height:110px;resize:vertical}
+  .form-note{font-size:12px;color:var(--ink-2)}
+  @media(max-width:900px){.contact{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}}
+
+  footer{background:#0E161D;color:#9AA7AF;padding:48px 0 32px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  footer img{height:40px}
+  footer .links{display:flex;gap:20px;flex-wrap:wrap}
+  footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>Atendimento a <b>órgãos públicos</b> e empresas · processos conforme a <b>Lei 14.133/2021</b></span>
+  <span>contato@foxtecnologia.online · +55 (34) 99143-9633</span>
+</div></div>
+
+<header><div class="wrap">
+  <a href="#" class="logo"><img src="assets/fox-logo.png" alt="FOX tecnologIA"></a>
+  <button class="menu-btn" aria-label="Abrir menu" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  <nav><ul>
+    <li><a href="#licitacoes">Licitações</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato" class="btn btn-p">Solicitar cotação</a></li>
+  </ul></nav>
+</div></header>
+
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="eyebrow">Tecnologia para governo e empresas</span>
+    <h1>Licenças, IA e sistemas de gestão — <em>do edital à ativação.</em></h1>
+    <p class="lead">A FOX tecnologIA fornece softwares, inteligência artificial e sistemas de gestão para órgãos públicos e empresas, e desenvolve produtos digitais próprios que resolvem problemas do dia a dia.</p>
+    <div class="hero-ctas">
+      <a href="#contato" class="btn btn-p">Enviar edital ou TR</a>
+      <a href="#produtos" class="btn btn-o">Conhecer produtos</a>
+    </div>
+    <div class="badges">
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Pregão eletrônico</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Dispensa</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Adesão a ata (SRP)</span>
+    </div>
+  </div>
+  <div class="paths">
+    <a href="#licitacoes" class="path">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10M19 21V10M9 21v-6h6v6M2 10l10-6 10 6"/></svg></div>
+      <div><h3>Sou órgão público ou empresa</h3><p>Cotações, propostas para pregão, dispensa e adesão a atas de registro de preços.</p><div class="go">Ver catálogo de licitações →</div></div>
+    </a>
+    <a href="#produtos" class="path">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+      <div><h3>Quero usar um produto FOX</h3><p>ZapScript.me, Documentos.shop e MyKollect — apps com IA prontos para usar.</p><div class="go">Ver produtos →</div></div>
+    </a>
+  </div>
+</div></section>
+
+<section id="licitacoes"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Licitações e compras públicas</span>
+    <h2>Fornecimento de tecnologia com segurança jurídica</h2>
+    <p>Revenda de licenças de software e IA, sistemas de gestão e serviços de implantação, com proposta técnica e documentação preparadas para o seu processo de compra.</p>
+  </div>
+
+  <div class="modal-row">
+    <span class="chip"><b>●</b> Pregão eletrônico</span>
+    <span class="chip"><b>●</b> Dispensa de licitação</span>
+    <span class="chip"><b>●</b> Adesão a Ata de Registro de Preços</span>
+    <span class="chip"><b>●</b> Cotação para pesquisa de preços</span>
+    <span class="chip"><b>●</b> Compras corporativas (B2B)</span>
+  </div>
+
+  <div class="cat-grid">
+    <div class="cat">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <h3>Licenças de software</h3>
+      <p>Licenciamento perpétuo ou por assinatura das principais fabricantes do mercado.</p>
+      <ul><li>Suítes de produtividade</li><li>Sistemas operacionais</li><li>Segurança e antivírus</li><li>Design, CAD e edição</li></ul>
+    </div>
+    <div class="cat">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+      <h3>Inteligência artificial</h3>
+      <p>Licenças corporativas de IA generativa com implantação, governança e treinamento.</p>
+      <ul><li>Assistentes de IA corporativos</li><li>APIs e plataformas de IA</li><li>Automação de atendimento</li><li>Capacitação de equipes</li></ul>
+    </div>
+    <div class="cat">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+      <h3>Sistemas de gestão</h3>
+      <p>Soluções para gestão pública e privada, do protocolo ao financeiro.</p>
+      <ul><li>ERP e gestão financeira</li><li>Protocolo e gestão documental</li><li>Atendimento ao cidadão</li><li>BI e painéis gerenciais</li></ul>
+    </div>
+    <div class="cat">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+      <h3>Serviços e nuvem</h3>
+      <p>Tudo o que vem depois da compra, para a solução funcionar de verdade.</p>
+      <ul><li>Implantação e migração</li><li>Suporte técnico</li><li>Infraestrutura em nuvem</li><li>Treinamento</li></ul>
+    </div>
+  </div>
+
+  <div class="process">
+    <div>
+      <span class="eyebrow" style="color:#FFB066">Como funciona</span>
+      <h3>Do edital à ativação, sem dor de cabeça</h3>
+      <p>Você envia o edital ou o termo de referência; nós cuidamos da análise técnica, da proposta e da entrega das licenças com suporte.</p>
+      <a href="#contato" class="btn btn-w" style="margin-top:28px">Enviar edital agora</a>
+    </div>
+    <ol class="steps">
+      <li><div><h4>Envio do edital ou TR</h4><p>Por e-mail ou pelo formulário, com prazo e modalidade.</p></div></li>
+      <li><div><h4>Análise técnica</h4><p>Conferimos especificações, quantitativos e compatibilidade.</p></div></li>
+      <li><div><h4>Proposta e habilitação</h4><p>Proposta comercial e documentação de habilitação organizadas.</p></div></li>
+      <li><div><h4>Entrega e suporte</h4><p>Ativação das licenças, implantação e acompanhamento pós-venda.</p></div></li>
+    </ol>
+  </div>
+
+  <div class="docs">
+    <div class="doc"><strong>Pesquisa de preços</strong>Envio de orçamento formal para compor a pesquisa de preços do seu processo.</div>
+    <div class="doc"><strong>Documentação</strong>Certidões e documentos de habilitação enviados mediante solicitação.</div>
+    <div class="doc"><strong>Pós-venda</strong>Canal direto para suporte, renovações e aditivos de contrato.</div>
+  </div>
+</div></section>
+
+<section id="produtos"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Produtos FOX</span>
+    <h2>Apps com IA criados pela FOX tecnologIA</h2>
+    <p>Produtos digitais próprios, prontos para usar, que resolvem tarefas do dia a dia com inteligência artificial.</p>
+  </div>
+  <div class="prod-grid">
+    <a class="prod" href="https://zapscript.me" target="_blank" rel="noopener">
+      <div class="top" style="background:linear-gradient(135deg,#D1FAE5,#A7F3D0)">
+        <svg class="logo-p" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#10b981"/><path d="M16 5C10.477 5 6 9.477 6 15c0 1.89.525 3.66 1.438 5.168L6 25l4.832-1.438A9.96 9.96 0 0016 25c5.523 0 10-4.477 10-10S21.523 5 16 5z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="color:#059669">WhatsApp + IA</span>
+        <h3>ZapScript.me</h3>
+        <p>Transcreve e resume automaticamente os áudios que você recebe no WhatsApp. Leia em segundos o que levaria minutos para ouvir.</p>
+        <span class="link" style="color:#059669">Acessar zapscript.me →</span>
+      </div>
+    </a>
+    <a class="prod" href="https://documentos.shop" target="_blank" rel="noopener">
+      <div class="top" style="background:linear-gradient(135deg,#DBEAFE,#BFDBFE)">
+        <svg class="logo-p" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563eb"/><path d="M11 6h7l5 5v15a1 1 0 01-1 1H11a1 1 0 01-1-1V7a1 1 0 011-1z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 6v5h5" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 17h6M13 21h6M13 13h2" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="color:#1D4ED8">Documentos digitais</span>
+        <h3>Documentos.shop</h3>
+        <p>Gere, organize e gerencie seus documentos digitais de forma rápida e prática, tudo em um só lugar.</p>
+        <span class="link" style="color:#1D4ED8">Acessar documentos.shop →</span>
+      </div>
+    </a>
+    <a class="prod" href="https://mykollect.com" target="_blank" rel="noopener">
+      <div class="top" style="background:linear-gradient(135deg,#D9EAE2,#B7D5C7)">
+        <svg class="logo-p" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1f4f3d"/><path d="M6 12a2 2 0 012-2h2l1.2-2h9.6L22 10h2a2 2 0 012 2v10a2 2 0 01-2 2H8a2 2 0 01-2-2V12z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="17" r="3.6" stroke="white" stroke-width="1.8"/></svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="color:#1f4f3d">Coleções + IA</span>
+        <h3>MyKollect</h3>
+        <p>Tire uma foto, a IA identifica o item e você confirma. Catalogue sua coleção em segundos — sem digitação, sem planilhas.</p>
+        <span class="link" style="color:#1f4f3d">Acessar mykollect.com →</span>
+      </div>
+    </a>
+  </div>
+</div></section>
+
+<section id="sobre"><div class="wrap about">
+  <div>
+    <span class="eyebrow">Sobre a FOX</span>
+    <h2 style="font-size:clamp(30px,4vw,42px);margin-bottom:16px">Tecnologia com a agilidade de quem também desenvolve.</h2>
+    <p style="color:var(--ink-2);font-size:18px">A FOX tecnologIA une duas frentes: o fornecimento de soluções de mercado para quem precisa comprar tecnologia com segurança, e o desenvolvimento de produtos próprios com inteligência artificial. Essa experiência prática com IA é o que levamos para cada cliente.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><strong>Transparência</strong><span>Propostas claras, sem letras miúdas.</span></div>
+    <div class="pillar"><strong>Agilidade</strong><span>Resposta rápida a cotações e prazos.</span></div>
+    <div class="pillar"><strong>Conhecimento em IA</strong><span>Usamos no dia a dia o que vendemos.</span></div>
+    <div class="pillar"><strong>Pós-venda</strong><span>Suporte e acompanhamento contínuos.</span></div>
+  </div>
+</div></section>
+
+<section id="contato"><div class="wrap contact">
+  <div>
+    <span class="eyebrow" style="color:#FFB066">Fale com a FOX</span>
+    <h2>Solicite uma cotação ou proposta</h2>
+    <p>Envie os dados do seu processo de compra ou conte o que precisa. Retornamos com proposta e prazos.</p>
+    <div class="info">
+      <a href="mailto:contato@foxtecnologia.online">✉ contato@foxtecnologia.online</a>
+      <a href="https://wa.me/5534991439633" target="_blank" rel="noopener">☏ +55 (34) 99143-9633 (WhatsApp)</a>
+    </div>
+  </div>
+  <form onsubmit="return enviar(event)">
+    <div><label for="org">Órgão / empresa</label><input id="org" required></div>
+    <div><label for="cnpj">CNPJ</label><input id="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00"></div>
+    <div><label for="email">E-mail</label><input id="email" type="email" required></div>
+    <div><label for="tipo">Tipo de solicitação</label>
+      <select id="tipo"><option>Pregão eletrônico</option><option>Dispensa de licitação</option><option>Adesão a ata (SRP)</option><option>Cotação / pesquisa de preços</option><option>Compra corporativa</option><option>Dúvida sobre produtos</option></select></div>
+    <div class="full"><label for="msg">Itens, quantidades ou link do edital</label><textarea id="msg" required></textarea></div>
+    <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <span class="form-note">Protótipo: abre seu e-mail com a mensagem pronta.</span>
+      <button class="btn btn-p" type="submit">Enviar solicitação</button>
+    </div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="assets/fox-logo-light.png" alt="FOX tecnologIA">
+  <div class="links"><a href="#licitacoes">Licitações</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></div>
+  <span>© 2026 FOX tecnologIA</span>
+</div></footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+  function enviar(e){e.preventDefault();const v=id=>document.getElementById(id).value;
+    const body=`Órgão/empresa: ${v('org')}\nCNPJ: ${v('cnpj')}\nE-mail: ${v('email')}\nTipo: ${v('tipo')}\n\n${v('msg')}`;
+    location.href=`mailto:contato@foxtecnologia.online?subject=${encodeURIComponent('Solicitação: '+v('tipo'))}&body=${encodeURIComponent(body)}`;return false}
+</script>
+</body>
+</html>
