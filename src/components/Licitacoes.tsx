@@ -26,7 +26,7 @@ export function CategoryBento({ detailed = false }: { detailed?: boolean }) {
       <div className="card relative overflow-hidden p-7 md:col-span-2 lg:col-span-4 lg:min-h-[300px] md:p-8 bg-[radial-gradient(circle_at_90%_10%,rgba(255,122,0,0.18),transparent_55%)]">
         <IconBox Icon={Sparkles} />
         <h3 className="mb-2.5 max-w-lg text-[clamp(24px,3vw,34px)] font-bold leading-tight">
-          Licenças de IA para o seu órgão ou empresa
+          Licenças de IA para governo e empresas
         </h3>
         <p className="max-w-lg text-ink-300">{ia.description}</p>
         <BrandList brands={ia.brands ?? []} />

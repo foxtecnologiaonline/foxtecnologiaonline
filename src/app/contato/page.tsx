@@ -3,7 +3,7 @@ import ContactBlock from '@/components/ContactBlock'
 
 export const metadata: Metadata = {
   title: 'Contato e cotações',
-  description: 'Solicite uma cotação ou proposta: licenças de software, IA e sistemas de gestão para órgãos públicos e empresas.',
+  description: 'Solicite uma cotação ou proposta: licenças de software, IA e sistemas de gestão para governo e empresas.',
   alternates: { canonical: '/contato' },
 }
 

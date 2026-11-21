@@ -29,7 +29,7 @@ export default function Home() {
             Licenças, IA e sistemas de gestão para <span className="grad-text">quem precisa fazer mais.</span>
           </h1>
           <p className="mx-auto mb-10 max-w-2xl text-[clamp(17px,2vw,20px)] text-ink-300">
-            Fornecemos tecnologia para órgãos públicos e empresas em todo o Brasil — e criamos nossos
+            Fornecemos tecnologia para governo e empresas em todo o Brasil — e criamos nossos
             próprios produtos com inteligência artificial.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
