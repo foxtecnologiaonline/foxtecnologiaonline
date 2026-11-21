@@ -9,7 +9,7 @@ import ContactBlock from '@/components/ContactBlock'
 export const metadata: Metadata = {
   title: 'Licitações — licenças de software, IA e sistemas de gestão',
   description:
-    'Fornecimento de licenças de software e IA (Microsoft 365, Google Workspace, ChatGPT, Claude, Gemini, Copilot), sistemas de gestão e serviços para órgãos públicos e empresas em todo o Brasil. Pregão, dispensa, adesão a ata e cotação.',
+    'Fornecimento de licenças de software e IA (Microsoft 365, Google Workspace, ChatGPT, Claude, Gemini, Copilot), sistemas de gestão e serviços para governo e empresas em todo o Brasil. Pregão, dispensa, adesão a ata e cotação.',
   alternates: { canonical: '/licitacoes' },
 }
 
@@ -24,7 +24,7 @@ const FAQ = [
   },
   {
     q: 'Atendem empresas privadas também?',
-    a: 'Sim. Atendemos órgãos públicos e empresas privadas com o mesmo cuidado, em todo o Brasil.',
+    a: 'Sim. Atendemos governo e empresas privadas com o mesmo cuidado, em todo o Brasil.',
   },
   {
     q: 'Como recebo os documentos de habilitação?',

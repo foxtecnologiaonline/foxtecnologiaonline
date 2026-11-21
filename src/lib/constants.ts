@@ -11,7 +11,7 @@ export const COMPANY = {
   slogan:
     'Soluções em tecnologIA — licenças, IA e sistemas de gestão para quem precisa fazer mais.',
   description:
-    'Licenças de software e IA, sistemas de gestão e serviços para órgãos públicos e empresas em todo o Brasil — e produtos digitais próprios movidos a inteligência artificial.',
+    'Licenças de software e IA, sistemas de gestão e serviços para governo e empresas em todo o Brasil — e produtos digitais próprios movidos a inteligência artificial.',
   email: 'contato@foxtecnologia.online',
   // PROVISÓRIO: confirmar se o WhatsApp de atendimento é este mesmo número.
   phone: '+55 (34) 99143-9633',
