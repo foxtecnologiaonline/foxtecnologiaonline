@@ -55,13 +55,6 @@ Também criamos **produtos próprios movidos a inteligência artificial**. Usamo
 
 **Transparência** — propostas claras, sem letras miúdas · **Agilidade** — resposta rápida a cotações e prazos · **IA na prática** — usamos o que entregamos · **Pós-venda** — suporte depois da compra
 
----
-
-## 🧰 Sobre este repositório
-
-Aqui está o código do [site oficial](https://www.foxtecnologia.online), feito com Next.js, TypeScript e Tailwind e publicado na Vercel.
-Para rodar localmente, configurar variáveis de ambiente ou editar o conteúdo, veja o **[guia de desenvolvimento](docs/DESENVOLVIMENTO.md)**.
-
 <div align="center">
 
 ---
